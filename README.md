@@ -1,2 +1,2 @@
 # PythonDeeplearningCourse
-Python programming and deep learning course
+ICP1: https://github.com/Sravanthi-Gogadi/PythonDeeplearningCourse/wiki/ICP1
