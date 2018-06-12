@@ -1,24 +1,30 @@
-import urllib.request
 from bs4 import BeautifulSoup
-import pandas as pd
-from tabulate import tabulate
-import os
-getlink = 'https://en.wikipedia.org/wiki/List_of_state_and_union_territory_capitals_in_India'
-sourcecode= urllib.request.urlopen(getlink)
-#To get the title of the webpage
-soup= BeautifulSoup(sourcecode,'html.parser')
-# To display every link in the webpage
-print(soup.title)
-print(soup.findAll('a'))
-for link in soup.findAll('a'):
-        print(link.get('href'))
-result_list = soup.findAll('table', {'class':'wikitable sortable plainrowheaders'})
-for tr in result_list:
-    s=tr.findAll('td')
-    h=tr.findAll('tr')
-    print(s)
-    print(h)
+import urllib.request
+import csv
 
-df=pd.read_html(getlink, attrs={'class': 'wikitable sortable plainrowheaders'})
-print(df)
+url = "https://en.wikipedia.org/wiki/List_of_state_and_union_territory_capitals_in_India"
+source_code = urllib.request.urlopen(url)
+plain_text = source_code
+soup = BeautifulSoup(plain_text, "html.parser")
+print(soup.find('title').string)
+result_list = soup.findAll('a')
 
+for i in result_list:
+    link = i.get('href')
+    print(link)
+
+result_table = soup.findAll('table', {'class': 'wikitable sortable plainrowheaders'})
+for tr in result_table:
+    table_data = tr.findAll('td')
+    table_head = tr.findAll('th')
+    print(table_data, table_head)
+
+
+
+table = soup.find('table', {'class': 'wikitable sortable plainrowheaders'})
+headers = [th.text for th in table.select("tr th")]
+
+with open("out.csv", "w") as f:
+    wr = csv.writer(f)
+    wr.writerow(headers)
+    wr.writerows([[td.text for td in row.find_all("td")] for row in table.select("tr + tr")])
