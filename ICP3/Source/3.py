@@ -2,6 +2,9 @@ from bs4 import BeautifulSoup
 import urllib.request
 import pandas as pd
 import csv
+# using tabulate to display the pandas dataframe
+from tabulate import tabulate
+
 # Read the web url into a variable
 url = "https://en.wikipedia.org/wiki/List_of_state_and_union_territory_capitals_in_India"
 # use urllib to open the url
@@ -24,8 +27,7 @@ for tr in result_table:
     table_head = tr.findAll('th')
 # Print td and th
 print(table_data, table_head)
-# using tabulate to display the pandas dataframe
-from tabulate import tabulate
+
 # To display the list of union territories
 table = soup.find_all('table')[1]
 # using pandas object read the table and assign header
