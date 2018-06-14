@@ -16,7 +16,7 @@ class Employee(object):
         print("The average value of {} is {}".format(self._n,average_sal))
         print(self._f)
 
-
+# Print the insurance details of individual member
 
     def insurance_details(self):
         for k, v in self._f.items():
