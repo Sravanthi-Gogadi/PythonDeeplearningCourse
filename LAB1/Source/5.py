@@ -1,5 +1,5 @@
 '''Library management system
-   Classes: Person, Passenger, FlightDetails, SeatingAllotment and TravelClass'''
+   Classes: Person, Passenger, FlightDetails, SeatingAllotment and Booking'''
 # declare person class
 class Person():
     # define constructor with parameters: name,email,age,phonenumber,ssn
@@ -73,6 +73,7 @@ class Booking(SeatingAllotment):
         print("    Class :",self.travelclass)
 
     def getsource(self):
+
         print("    Source :", self.source)
 
     def getdest(self):
@@ -121,6 +122,19 @@ t.getdepdate()
 t.getdepttime()
 t.gettravelclass()
 t.getseatinfo()
+print("____________________________________")
+print("")
+print(" Creating instances of all classes and calling their member functions")
+booking = Booking("Business", "6/16/2018", "Hong Kong", "Chicago", "22.10", 2, "B")
+
+booking.gettravelclass()
+
+seat = SeatingAllotment(26, "C")
+seat.getseatinfo()
+
+person = Person("Bhargavi", "Nadendla", "bhar@gmail.com", "557-899-87890", 23, "909-909-9990")
+person.getage()
+
 
 
 
