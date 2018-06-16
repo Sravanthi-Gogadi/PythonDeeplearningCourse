@@ -1,4 +1,4 @@
-'''Library management system
+'''Airline Reservation system
    Classes: Person, Passenger, FlightDetails, SeatingAllotment and Booking'''
 # declare person class
 class Person():
