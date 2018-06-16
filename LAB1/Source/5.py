@@ -73,7 +73,6 @@ class Booking(SeatingAllotment):
         print("    Class :",self.travelclass)
 
     def getsource(self):
-
         print("    Source :", self.source)
 
     def getdest(self):
