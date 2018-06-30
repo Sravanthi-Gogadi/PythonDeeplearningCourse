@@ -21,7 +21,7 @@ for i in range(1,51):
   kmodel=neighbors.KNeighborsClassifier(n_neighbors=i)
   #fit training data into kmodel
   kmodel.fit(train_x, train_y)
-  #predict knnfor test data
+  #predict knn for test data
   predict=kmodel.predict(test_x)
   #calc the accuracy score using knn model for different k values
   print("For K={} Accuracy is:{} ".format(i,accuracy_score(predict, test_y)))
