@@ -17,11 +17,11 @@ train_x, test_x, train_y, test_y=train_test_split(x, y, test_size=0.2, random_st
 
 # choose k values from 1 to 50
 for i in range(1,51):
-  #define the kmean model
-  kmeanmodel=neighbors.KNeighborsClassifier(n_neighbors=i)
-  #fit training data into kmeanmodel
-  kmeanmodel.fit(train_x, train_y)
-  #predict kmean for test data
-  predict=kmeanmodel.predict(test_x)
-  #calc the accuracy score using kmean model for different k values
+  #define the knn model
+  kmodel=neighbors.KNeighborsClassifier(n_neighbors=i)
+  #fit training data into kmodel
+  kmodel.fit(train_x, train_y)
+  #predict knnfor test data
+  predict=kmodel.predict(test_x)
+  #calc the accuracy score using knn model for different k values
   print("For K={} Accuracy is:{} ".format(i,accuracy_score(predict, test_y)))
