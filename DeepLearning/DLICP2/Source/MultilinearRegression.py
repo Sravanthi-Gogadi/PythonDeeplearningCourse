@@ -3,6 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import tensorflow as tf
 import xlrd
+from mpl_toolkits.mplot3d import Axes3D  #required for 3d plotting mandatory
 
 # Define the data set of housing details
 DATA_FILE = 'data/Smoking.xls'
@@ -69,4 +70,18 @@ X1,X2, Y = data.T[0], data.T[1], data.T[2]
 plt.plot(X2, Y, 'bo', label='Real data')
 plt.plot(X2, X1 * w1 + X2 * w2 + b, 'r', label='Predicted data')
 plt.legend()
+plt.show()
+
+
+
+########### 3d graph #############
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+
+ax.scatter(X1, X2, X1 * w1 + X2 * w2 + b, c='r', marker='o')
+
+ax.set_xlabel('X1 Label')
+ax.set_ylabel('X2 Label')
+ax.set_zlabel('Y Label')
+
 plt.show()
