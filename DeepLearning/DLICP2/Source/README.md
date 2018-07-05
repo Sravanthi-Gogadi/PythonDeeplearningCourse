@@ -1,3 +1,3 @@
-# PythonDeeplearningCourse
-ICP1: https://github.com/Sravanthi-Gogadi/PythonDeeplearningCourse/wiki/ICP1 <br>
-ICP3: https://github.com/Sravanthi-Gogadi/PythonDeeplearningCourse/wiki/ICP3
+# Tensorboard
+## Graph 1
+![alt text](https://github.com/Sravanthi-Gogadi/PythonDeeplearningCourse/blob/master/DeepLearning/DLICP2/Documentation/2.PNG)
