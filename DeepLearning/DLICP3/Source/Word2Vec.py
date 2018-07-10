@@ -113,11 +113,12 @@ batch, labels = generate_batch(8, 2, 1)
 # Size of the bath
 batch_size = 128
 
-# Dimension of embedding vector
-embedding_size = 150
+# Dimension of embedding vector ( changed from 150 to 500)
+embedding_size = 500
 
 # How many words to consider left and right (the bigger, the longer the training)
-skip_window = 3
+# Changed from 1 to 5
+skip_window = 5
 
 # How many times to reuse an input to generate a label
 num_skips = 2
@@ -138,6 +139,7 @@ num_sampled = 64
 
 ###################
 # Model Learning Rate
+# changed learning rate from 0.1 to 0.001
 learning_rate = 0.001
 
 # How many words in vocab
